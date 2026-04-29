@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="hangman.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="hangman.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="score title is-2 has-text-centered">⭐<span id="scoreDisplay">0</span> 🏆<span id="bestScoreDisplay">0</span></div>
+    <hero class="is-primary">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-1">Hangman Game</h1>
+                <p class="subtitle is-4">Guess the word before the hangman is complete! Failure to do so will reset your score.</p>
+            </div>
+        </div>
+    </hero>
+    <div id="hangmanContainer" class="has-text-centered">
+        <!-- SVG for hangman drawing -->
+        <svg width="300" height="365">
+            <!-- Gallows -->
+            <line x1="15" y1="360" x2="285" y2="360" stroke="black" stroke-width="6"/>
+            <line x1="75" y1="360" x2="75" y2="30" stroke="black" stroke-width="6"/>
+            <line x1="72" y1="30" x2="228" y2="30" stroke="black" stroke-width="6"/>
+            <line x1="120" y1="30" x2="75" y2="75" stroke="black" stroke-width="6"/>
+            <line x1="225" y1="30" x2="225" y2="60" stroke="black" stroke-width="6"/>
+
+            <!-- Hangman figure -->
+            <circle id="head" cx="225" cy="90" r="30" stroke="black" stroke-width="6" fill="none"/>
+            <line id="body" x1="225" y1="120" x2="225" y2="210" stroke="black" stroke-width="6"/>
+            <line id="leftArm" x1="225" y1="150" x2="180" y2="180" stroke="black" stroke-width="6"/>
+            <line id="rightArm" x1="225" y1="150" x2="270" y2="180" stroke="black" stroke-width="6"/>
+            <line id="leftLeg" x1="225" y1="210" x2="180" y2="270" stroke="black" stroke-width="6"/>
+            <line id="rightLeg" x1="225" y1="210" x2="270" y2="270" stroke="black" stroke-width="6"/>
+        </svg>
+    </div>
+    <div id="livesContainer" class="has-text-centered">
+        <p id="livesDisplay" class="subtitle is-3"><!-- placeholder for lives display --></p>
+    </div>
+    <div id="wordContainer" class="has-text-centered">
+        <h2 id="wordDisplay">
+            <!-- placeholder for dashes & word display -->
+        </h2>
+    </div>
+    <div id="keyboardContainer" class="has-text-centered">
+        <div id="keyboard" class="buttons is-centered">
+            <!-- placeholder for letter buttons -->
+        </div>
+    <div id="message" class="subtitle is-4 has-text-centered"></div>
+    <button id="newGameButton" class="button is-info is-medium has-text-centered">New Game</button>
+
+    <div id="skipSection" class="has-text-centered">
+        <p class="subtitle is-size-6 has-text-danger">Note: Skipping a word will deduct the points earned from that word.</p>
+        <button id="skipWordButton" class="button is-danger is-medium has-text-centered">Skip Word</button>
+    </div>
+</div>
+</body>
+</html>

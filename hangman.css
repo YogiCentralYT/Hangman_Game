@@ -1,0 +1,41 @@
+.score {
+    margin-top: 10px;
+}
+
+.hero-body {
+    margin-top: -50px;
+}
+
+#head, #body, #leftArm, #rightArm, #leftLeg, #rightLeg {
+    display: none;
+}
+
+#wordDisplay {
+    font-size: 50px;
+    letter-spacing: 0.2em;
+}
+
+#livesDisplay {
+    margin-top: 10px;
+}
+
+#keyboardContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 850px;
+    min-width: 600px;
+}
+
+#bottomButtons button{
+    margin: 0px 3px
+}
+
+#message {
+    display: none;
+}
+
+#newGameButton {
+    display: none;
+}
